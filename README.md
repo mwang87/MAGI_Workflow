@@ -2,6 +2,7 @@
 
 ```
 conda create -n magi1 -f magi/magi_env.yml
+conda install -c bioconda nextflow
 cd magi 
 python setup.py
 ```
