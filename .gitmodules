@@ -1,0 +1,3 @@
+[submodule "magi"]
+	path = magi
+	url = https://github.com/biorack/magi.git
