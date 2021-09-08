@@ -22,7 +22,7 @@
     </bind>
 
 
-    <bind action="nf_process" tool="nf_process">
+    <bind action="magi_nf_process" tool="nf_process">
         <inputAsRequirement port="metabolite_data" requirement="metabolite_data"/>
         <inputAsRequirement port="inputsequence" requirement="inputsequence"/>
         <inputAsRequirement port="workflowParameters" requirement="workflowParameters"/>

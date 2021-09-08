@@ -1,3 +1,5 @@
+# MAGI 1 Setup
+
 ## Setup
 
 ```
@@ -16,3 +18,7 @@ tar -xzvf ncbi-blast-2.12.0+-x64-linux.tar.gz
 cp ncbi-blast-2.12.0+/bin/blastp . 
 cp ncbi-blast-2.12.0+/bin/makeblastdb .
 ```
+
+### ProteoSAFe considerations
+
+Even after deployment, there is a need to run setup.py

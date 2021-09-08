@@ -32,8 +32,8 @@
 
             <!-- Mapping Input Files into NextFlow -->
             <arg option="-newparameters" value="publishdir:workflow_results"/>
-            <arg option="-newparameters" value="inputspectra:metabolite_data/**/*"/>
-            <arg option="-newparameters" value="inputsequence:inputsequence/**/*"/>
+            <arg option="-newparameters" value="inputspectra:metabolite_data/*"/>
+            <arg option="-newparameters" value="inputsequence:inputsequence/*"/>
             <arg option="-newparameters" value="workflowParameters:workflowParameters/*"/>
 
             <!-- Mapping Proteosafe param to nextflow params -->

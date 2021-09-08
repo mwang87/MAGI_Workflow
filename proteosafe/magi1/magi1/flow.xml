@@ -13,7 +13,7 @@
 
 
     <collection name="workflow_results"/>
-    <action name="nf_process">
+    <action name="magi_nf_process">
         <input  port="metabolite_data"             collection="metabolite_data"/>
         <input  port="inputsequence"             collection="inputsequence"/>
         <input  port="workflowParameters"            object="workflowParameters"/>
