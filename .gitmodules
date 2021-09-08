@@ -1,3 +1,6 @@
 [submodule "magi"]
 	path = magi
 	url = https://github.com/biorack/magi.git
+[submodule "CCMSDeployments"]
+	path = proteosafe/CCMSDeployments
+	url = https://github.com/CCMS-UCSD/CCMSDeployments.git
