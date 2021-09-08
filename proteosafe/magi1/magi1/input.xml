@@ -14,9 +14,23 @@
         </parameter>
 
         <!-- Search file parameters -->
-        <parameter name="spec_on_server" label="Spectrum Files">
+        <parameter name="metabolite_data" label="metabolite_data">
             <validator type="required"/>
-            <fileGenerator type="upload" purpose="spectrum" target="spectra"/>
+            <fileGenerator type="upload" purpose="metabolite_data" target="metabolite_data"/>
+        </parameter>
+
+        <parameter name="TYPE" label="TYPE">
+            <options>
+                <option value="0" label="0"/>
+                <option value="1" label="1"/>
+            </options>
+            <validator type="set"/>
+        </parameter>
+
+        <!-- Search file parameters -->
+        <parameter name="inputsequence" label="inputsequence">
+            <validator type="required"/>
+            <fileGenerator type="upload" purpose="inputsequence" target="inputsequence"/>
         </parameter>
 
         <parameter name="TYPE" label="TYPE">
@@ -33,13 +47,27 @@
         <row>
             <cell>
                 <label>
-                    <content parameter="spec_on_server"/>
+                    <content parameter="metabolite_data"/>
                     <tooltip id="hSpectrumFile"/>
                 </label>
             </cell>
             <cell>
-                <module id="spec_on_server" type="fileSelector">
-                    <property name="label">Spectrum Files</property>
+                <module id="metabolite_data" type="fileSelector">
+                    <property name="label">metabolite_data Files</property>
+                </module>
+            </cell>
+        </row>
+
+        <row>
+            <cell>
+                <label>
+                    <content parameter="inputsequence"/>
+                    <tooltip id="hSpectrumFile"/>
+                </label>
+            </cell>
+            <cell>
+                <module id="inputsequence" type="fileSelector">
+                    <property name="label">inputsequence Files</property>
                 </module>
             </cell>
         </row>

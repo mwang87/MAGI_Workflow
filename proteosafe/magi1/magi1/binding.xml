@@ -5,9 +5,14 @@
         <query name="task" valueRef="@task" />
         <query name="user" valueRef="@user"/>
         <compression type="zip" />
-        <download port="spectra" type="folder">
-            <query name="resource" value="spectra"/>
+        <download port="metabolite_data" type="folder">
+            <query name="resource" value="metabolite_data"/>
         </download>
+        <download port="inputsequence" type="folder">
+            <query name="resource" value="inputsequence"/>
+        </download>
+
+        
         <download port="flowParams" type="file">
             <query name="resource" value="params"/>
         </download>
@@ -16,14 +21,10 @@
         </downloadParams>
     </bind>
 
-    <bind action="demangle_spectra" tool="demangle_spectra">
-        <inputAsRequirement port="spectra" requirement="spectra"/>
-        <inputAsRequirement port="workflowParameters" requirement="workflowParameters"/>
-        <productionToOutput port="demangled_spectra" production="demangled_spectra"/>
-    </bind>
 
     <bind action="nf_process" tool="nf_process">
-        <inputAsRequirement port="demangled_spectra" requirement="demangled_spectra"/>
+        <inputAsRequirement port="metabolite_data" requirement="metabolite_data"/>
+        <inputAsRequirement port="inputsequence" requirement="inputsequence"/>
         <inputAsRequirement port="workflowParameters" requirement="workflowParameters"/>
         <productionToOutput port="workflow_results" production="workflow_results"/>
     </bind>

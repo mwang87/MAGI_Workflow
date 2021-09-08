@@ -1,26 +1,4 @@
 <toolset>
-    <!-- Demangling -->
-    <pathSet base="miniconda3_gamma/envs/magi1/bin">
-        <toolPath tool="demangle_spectra" path="python"/>
-    </pathSet>
-    <pathSet base="$base">
-        <pathVar name="demangle.script" path="demangle_collection.py"/>
-    </pathSet>
-
-    <tool name="demangle_spectra">
-        <require name="spectra" type="folder"/>
-        <require name="workflowParameters" type="file"/>
-        <produce name="demangled_spectra" type="folder"/>
-
-        <execution env="binary" argConvention="adhoc">
-            <arg pathRef="demangle.script"/>
-            <arg option="p" valueRef="workflowParameters"/>
-            <arg option="-input_mangled_prefix" value="spectra"/>
-            <arg option="i" valueRef="spectra"/>
-            <arg option="o" valueRef="demangled_spectra"/>
-        </execution>
-    </tool>
-
     <pathSet base="miniconda3_gamma/envs/magi1/bin">
         <toolPath tool="nf_process" path="python"/>
         <pathVar name="python_runtime" path="python"/>
@@ -36,7 +14,8 @@
     </pathSet>
 
     <tool name="nf_process">
-        <require name="demangled_spectra" type="folder"/>
+        <require name="metabolite_data" type="folder"/>
+        <require name="inputsequence" type="folder"/>
         <require name="workflowParameters" type="file"/>
         <produce name="workflow_results" type="folder"/>
 
@@ -53,7 +32,8 @@
 
             <!-- Mapping Input Files into NextFlow -->
             <arg option="-newparameters" value="publishdir:workflow_results"/>
-            <arg option="-newparameters" value="inputspectra:demangled_spectra"/>
+            <arg option="-newparameters" value="inputspectra:metabolite_data/**/*"/>
+            <arg option="-newparameters" value="inputsequence:inputsequence/**/*"/>
             <arg option="-newparameters" value="workflowParameters:workflowParameters/*"/>
 
             <!-- Mapping Proteosafe param to nextflow params -->
