@@ -82,3 +82,5 @@ process workflowscoring {
         --output $results_folder
     """
 }
+
+// Formatting results
