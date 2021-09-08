@@ -8,17 +8,12 @@
 
     <block id="view_results" type="table">
         <data>
-            <source type="file" name="workflow_results/result_file.tsv"/>
+            <source type="file" name="workflow_results/workflowscoring/gene_to_reaction/magi_results.csv"/>
             <parsers>
                 <parser type="genericTabular"/>
             </parsers>
         </data>
         <row>
-            <column label="View Chromatogram" type="genericurlgenerator" width="5">
-                <parameter name="URLBASE" value="https://gnps-lcms.ucsd.edu"/>
-                <parameter name="REQUESTPARAMETER=usi" value="mzspec:GNPS:TASK-{task}-[_dyn_#filename]"/>
-                <parameter name="LABEL" value="View LCMS Chromatogram (Beta)"/>
-            </column>
         </row>
     </block>
 

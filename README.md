@@ -22,3 +22,13 @@ cp ncbi-blast-2.12.0+/bin/makeblastdb .
 ### ProteoSAFe considerations
 
 Even after deployment, there is a need to run setup.py
+
+
+# MAGI 2 Setup
+
+## Setup
+
+```
+conda create -n magi2 -f magi/magi_2_env.yml
+python ./setup_magi2.py
+```
