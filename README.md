@@ -23,6 +23,9 @@ cp ncbi-blast-2.12.0+/bin/makeblastdb .
 
 Even after deployment, there is a need to run setup.py
 
+### Missing Files
+
+graphml file is missing for magi 1, need to install after setup.py from Ben. 
 
 # MAGI 2 Setup
 
