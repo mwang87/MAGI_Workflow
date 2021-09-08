@@ -20,7 +20,7 @@ process geneToReaction {
     file sequence_results from _sequence_ch
 
     output:
-    file "gene_to_reaction" into _gene_reaction_results_ch
+    file "gene_to_reaction" into _results_ch
 
     """
     python $TOOL_FOLDER/magi/workflow/magi_workflow_gene_to_reaction.py \
@@ -39,10 +39,10 @@ process compound_to_reaction {
     publishDir "$params.publishdir", mode: 'copy'
 
     input:
-    file results_folder from _gene_reaction_results_ch
+    file results_folder from _results_ch
 
     output:
-    file "$results_folder" into _gene_reaction_results_ch2
+    file "$results_folder" into _results_ch2
 
     """
     python $magi_path/workflow/magi_workflow_compound_to_reaction.py \
@@ -55,10 +55,10 @@ process reaction_to_gene {
     publishDir "$params.publishdir", mode: 'copy'
 
     input:
-    file results_folder from _gene_reaction_results_ch2
+    file results_folder from _results_ch2
 
     output:
-    file "$results_folder" into _gene_reaction_results_ch2
+    file "$results_folder" into _results_ch3
 
     """
     python $magi_path/workflow/magi_workflow_reaction_to_gene.py \
@@ -71,10 +71,10 @@ process workflowscoring {
     publishDir "$params.publishdir", mode: 'copy'
 
     input:
-    file results_folder from _gene_reaction_results_ch2
+    file results_folder from _results_ch3
 
     output:
-    file "$results_folder" into _gene_reaction_results_ch2
+    file "$results_folder" into _results_ch4
 
     """
     python $magi_path/workflow/magi_workflow_scoring.py \
