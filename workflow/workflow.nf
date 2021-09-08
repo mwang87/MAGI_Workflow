@@ -45,7 +45,7 @@ process compound_to_reaction {
     file "$results_folder" into _results_ch2
 
     """
-    python $magi_path/workflow/magi_workflow_compound_to_reaction.py \
+    python $TOOL_FOLDER/magi/workflow/magi_workflow_compound_to_reaction.py \
         --not_first_script \
         --output $results_folder
     """
@@ -61,7 +61,7 @@ process reaction_to_gene {
     file "$results_folder" into _results_ch3
 
     """
-    python $magi_path/workflow/magi_workflow_reaction_to_gene.py \
+    python $TOOL_FOLDER/magi/workflow/magi_workflow_reaction_to_gene.py \
         --not_first_script \
         --output $results_folder
     """
@@ -77,7 +77,7 @@ process workflowscoring {
     file "$results_folder" into _results_ch4
 
     """
-    python $magi_path/workflow/magi_workflow_scoring.py \
+    python $TOOL_FOLDER/magi/workflow/magi_workflow_scoring.py \
         --not_first_script \
         --output $results_folder
     """
