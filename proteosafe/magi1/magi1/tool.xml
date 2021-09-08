@@ -1,5 +1,5 @@
 <toolset>
-    <pathSet base="miniconda3_gamma/envs/magi1/bin">
+    <pathSet base="miniconda3_gamma/envs/msql2/bin">
         <toolPath tool="nf_process" path="python"/>
         <pathVar name="python_runtime" path="python"/>
     </pathSet>
@@ -24,7 +24,7 @@
             <arg valueRef="workflowParameters"/>
             <arg pathRef="nextflow.script"/>
             <arg pathRef="conda_activate_path"/>
-            <arg value="msql2"/>
+            <arg value="magi1"/>
 
             <arg option="-metricoutput" valueRef="workflow_results"/>
 
