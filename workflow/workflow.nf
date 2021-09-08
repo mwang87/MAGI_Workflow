@@ -12,7 +12,7 @@ _sequence_ch = Channel.fromPath( params.inputsequence )
 TOOL_FOLDER = "$baseDir/bin"
 params.publishdir = "nf_output"
 
-process calculateResults {
+process geneToReaction {
     publishDir "$params.publishdir", mode: 'copy'
 
     input:
@@ -20,7 +20,7 @@ process calculateResults {
     file sequence_results from _sequence_ch
 
     output:
-    file "result_file.tsv"
+    file "gene_to_reaction" into _gene_reaction_results_ch
 
     """
     python $TOOL_FOLDER/magi/workflow/magi_workflow_gene_to_reaction.py \
@@ -32,5 +32,53 @@ process calculateResults {
         --reciprocal_closeness 75 \
         --chemnet_penalty 4.0 \
         --output gene_to_reaction --mute
+    """
+}
+
+process compound_to_reaction {
+    publishDir "$params.publishdir", mode: 'copy'
+
+    input:
+    file results_folder from _gene_reaction_results_ch
+
+    output:
+    file "$results_folder" into _gene_reaction_results_ch2
+
+    """
+    python $magi_path/workflow/magi_workflow_compound_to_reaction.py \
+        --not_first_script \
+        --output $results_folder
+    """
+}
+
+process reaction_to_gene {
+    publishDir "$params.publishdir", mode: 'copy'
+
+    input:
+    file results_folder from _gene_reaction_results_ch2
+
+    output:
+    file "$results_folder" into _gene_reaction_results_ch2
+
+    """
+    python $magi_path/workflow/magi_workflow_reaction_to_gene.py \
+        --not_first_script \
+        --output $results_folder
+    """
+}
+
+process workflowscoring {
+    publishDir "$params.publishdir", mode: 'copy'
+
+    input:
+    file results_folder from _gene_reaction_results_ch2
+
+    output:
+    file "$results_folder" into _gene_reaction_results_ch2
+
+    """
+    python $magi_path/workflow/magi_workflow_scoring.py \
+        --not_first_script \
+        --output $results_folder
     """
 }
