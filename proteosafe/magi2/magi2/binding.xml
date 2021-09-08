@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<binding>
+    <bind action="begin" type="download">
+        <url value="{livesearch.download}"/>
+        <query name="task" valueRef="@task" />
+        <query name="user" valueRef="@user"/>
+        <compression type="zip" />
+        <download port="metabolite_data" type="folder">
+            <query name="resource" value="metabolite_data"/>
+        </download>
+        <download port="inputsequence" type="folder">
+            <query name="resource" value="inputsequence"/>
+        </download>
+
+        
+        <download port="flowParams" type="file">
+            <query name="resource" value="params"/>
+        </download>
+        <downloadParams>
+            <query name="resource" value="params"/>
+        </downloadParams>
+    </bind>
+
+
+    <bind action="magi_nf_process" tool="nf_process">
+        <inputAsRequirement port="metabolite_data" requirement="metabolite_data"/>
+        <inputAsRequirement port="inputsequence" requirement="inputsequence"/>
+        <inputAsRequirement port="workflowParameters" requirement="workflowParameters"/>
+        <productionToOutput port="workflow_results" production="workflow_results"/>
+    </bind>
+
+    <bind action="end" type="upload">
+            <url value="{livesearch.upload}"/>
+            <query name="task" valueRef="@task"/>
+            <contentQuery name="content"/>
+            <compression type="zip"/>
+            <upload port="workflow_results" type="folder">
+                <query name="resource" value="workflow_results"/>
+            </upload>
+            <upload port="demangled_spectra" type="folder">
+                <query name="resource" value="demangled_spectra"/>
+            </upload>
+    </bind>
+</binding>

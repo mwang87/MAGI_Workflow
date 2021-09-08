@@ -1,0 +1,1 @@
+../../../../workflow/workflow_magi2.nf
