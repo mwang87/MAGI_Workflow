@@ -82,3 +82,18 @@ process scoring {
 }
 
 // Formatting results
+process format_results {
+    publishDir "$params.publishdir/results", mode: 'copy'
+
+    input:
+    file results_folder from _results_ch4
+
+    output:
+    file "*tsv"
+
+    """
+    python $TOOL_FOLDER/reformat.py \
+        $results_folder
+    """
+
+}

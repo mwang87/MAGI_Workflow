@@ -10,7 +10,7 @@
 
     <pathSet base="$base">
         <pathVar name="nextflow_wrapper.script" path="nextflow_wrapper.py"/>
-        <pathVar name="nextflow.script" path="workflow.nf"/>
+        <pathVar name="nextflow.script" path="workflow_magi2.nf"/>
     </pathSet>
 
     <tool name="nf_process">
