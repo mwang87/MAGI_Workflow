@@ -15,6 +15,10 @@
         </data>
         
         <row>
+            <column type="genericimagedisplayer" label="Structure">
+                <parameter name="URLBASE" value="https://gnps-structure.ucsd.edu/structureimg"/>
+                <parameter name="REQUESTPARAMETER=smiles" value="[_dyn_#original_compound]"/>
+            </column>
         </row>
     </block>
 
@@ -31,6 +35,10 @@
         </data>
         
         <row>
+            <column type="genericimagedisplayer" label="Structure">
+                <parameter name="URLBASE" value="https://gnps-structure.ucsd.edu/structureimg"/>
+                <parameter name="REQUESTPARAMETER=smiles" value="[_dyn_#original_compound]"/>
+            </column>
         </row>
     </block>
 
@@ -47,6 +55,10 @@
         </data>
         
         <row>
+            <column type="genericimagedisplayer" label="Structure">
+                <parameter name="URLBASE" value="https://gnps-structure.ucsd.edu/structureimg"/>
+                <parameter name="REQUESTPARAMETER=smiles" value="[_dyn_#original_compound]"/>
+            </column>
         </row>
     </block>
     
