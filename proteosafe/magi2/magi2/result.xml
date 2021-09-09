@@ -2,21 +2,53 @@
 <interface id="speclib_add">
 
     <!-- Workflow Specific Results -->
-    <view id="view_results" label="View Results">
-        <blockRef id="main" type="view_results"/>
+    <view id="view_magi_results" label="View MAGI Results">
+        <blockRef id="main" type="view_magi_results"/>
     </view>
 
-    <block id="view_results" type="table">
+    <block id="view_magi_results" type="table">
         <data>
-            <source type="file" name="workflow_results/scoring/compound_to_reaction/magi_results.csv"/>
+            <source type="file" name="workflow_results/results/magi_results.tsv"/>
             <parsers>
                 <parser type="genericTabular"/>
             </parsers>
         </data>
+        
         <row>
         </row>
     </block>
 
+    <view id="view_magi_compound_results" label="View MAGI Compound Results">
+        <blockRef id="main" type="view_magi_compound_results"/>
+    </view>
+
+    <block id="view_magi_compound_results" type="table">
+        <data>
+            <source type="file" name="workflow_results/results/magi_compound_results.tsv"/>
+            <parsers>
+                <parser type="genericTabular"/>
+            </parsers>
+        </data>
+        
+        <row>
+        </row>
+    </block>
+
+    <view id="view_magi_gene_results" label="View MAGI Gene Results">
+        <blockRef id="main" type="view_magi_gene_results"/>
+    </view>
+
+    <block id="view_magi_gene_results" type="table">
+        <data>
+            <source type="file" name="workflow_results/results/magi_gene_results.tsv"/>
+            <parsers>
+                <parser type="genericTabular"/>
+            </parsers>
+        </data>
+        
+        <row>
+        </row>
+    </block>
     
     <!-- Summary Stats for Compute -->
     <view id="proteosafe_workflow_trace" label="ProteoSAFe Workflow Trace" group="Compute Stats">
