@@ -19,6 +19,10 @@
                 <parameter name="URLBASE" value="https://gnps-structure.ucsd.edu/structureimg"/>
                 <parameter name="REQUESTPARAMETER=smiles" value="[_dyn_#original_compound]"/>
             </column>
+            <column label="Rhea" type="genericurlgenerator" width="5">
+                <parameter name="URLBASE" value="https://www.rhea-db.org/rhea/[_dyn_#rhea_ID_g2r]"/>
+                <parameter name="LABEL" value="View Rhea"/>
+            </column>
         </row>
     </block>
 
@@ -39,6 +43,10 @@
                 <parameter name="URLBASE" value="https://gnps-structure.ucsd.edu/structureimg"/>
                 <parameter name="REQUESTPARAMETER=smiles" value="[_dyn_#original_compound]"/>
             </column>
+            <column label="Rhea" type="genericurlgenerator" width="5">
+                <parameter name="URLBASE" value="https://www.rhea-db.org/rhea/[_dyn_#rhea_ID_g2r]"/>
+                <parameter name="LABEL" value="View Rhea"/>
+            </column>
         </row>
     </block>
 
@@ -58,6 +66,10 @@
             <column type="genericimagedisplayer" label="Structure">
                 <parameter name="URLBASE" value="https://gnps-structure.ucsd.edu/structureimg"/>
                 <parameter name="REQUESTPARAMETER=smiles" value="[_dyn_#original_compound]"/>
+            </column>
+            <column label="Rhea" type="genericurlgenerator" width="5">
+                <parameter name="URLBASE" value="https://www.rhea-db.org/rhea/[_dyn_#rhea_ID_g2r]"/>
+                <parameter name="LABEL" value="View Rhea"/>
             </column>
         </row>
     </block>
