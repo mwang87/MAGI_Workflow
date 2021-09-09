@@ -24,7 +24,7 @@
 
     <block id="view_magi_results" type="table">
         <data>
-            <source type="file" name="workflow_results/magi_results.tsv"/>
+            <source type="file" name="workflow_results/results/magi_results.tsv"/>
             <parsers>
                 <parser type="genericTabular"/>
             </parsers>
@@ -40,7 +40,7 @@
 
     <block id="view_magi_compound_results" type="table">
         <data>
-            <source type="file" name="workflow_results/magi_compound_results.tsv"/>
+            <source type="file" name="workflow_results/results/magi_compound_results.tsv"/>
             <parsers>
                 <parser type="genericTabular"/>
             </parsers>
@@ -56,7 +56,7 @@
 
     <block id="view_magi_gene_results" type="table">
         <data>
-            <source type="file" name="workflow_results/magi_gene_results.tsv"/>
+            <source type="file" name="workflow_results/results/magi_gene_results.tsv"/>
             <parsers>
                 <parser type="genericTabular"/>
             </parsers>
