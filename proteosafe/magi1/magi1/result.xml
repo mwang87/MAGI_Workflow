@@ -10,9 +10,58 @@
         <data>
             <source type="file" name="workflow_results/workflowscoring/gene_to_reaction/magi_results.csv"/>
             <parsers>
+                <parser type="genericTabular" delimiter=","/>
+            </parsers>
+        </data>
+
+        <row>
+        </row>
+    </block>
+
+    <view id="view_magi_results" label="View MAGI Results">
+        <blockRef id="main" type="view_magi_results"/>
+    </view>
+
+    <block id="view_magi_results" type="table">
+        <data>
+            <source type="file" name="workflow_results/magi_results.tsv"/>
+            <parsers>
                 <parser type="genericTabular"/>
             </parsers>
         </data>
+        
+        <row>
+        </row>
+    </block>
+
+    <view id="view_magi_compound_results" label="View MAGI Compound Results">
+        <blockRef id="main" type="view_magi_compound_results"/>
+    </view>
+
+    <block id="view_magi_compound_results" type="table">
+        <data>
+            <source type="file" name="workflow_results/magi_compound_results.tsv"/>
+            <parsers>
+                <parser type="genericTabular"/>
+            </parsers>
+        </data>
+        
+        <row>
+        </row>
+    </block>
+
+    <view id="view_magi_gene_results" label="View MAGI Gene Results">
+        <blockRef id="main" type="view_magi_gene_results"/>
+    </view>
+
+    <block id="view_magi_gene_results" type="table">
+        <data>
+            <source type="file" name="workflow_results/magi_gene_results.tsv"/>
+            <parsers>
+                <parser type="genericTabular"/>
+            </parsers>
+        </data>
+        
         <row>
         </row>
     </block>
