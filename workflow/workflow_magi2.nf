@@ -13,7 +13,7 @@ TOOL_FOLDER = "$baseDir/bin"
 params.publishdir = "nf_output"
 
 process compound_to_reaction {
-    publishDir "$params.publishdir/geneToReaction", mode: 'copy'
+    //publishDir "$params.publishdir/geneToReaction", mode: 'copy'
 
     input:
     file spectrum_results from _spectra_ch
@@ -34,7 +34,7 @@ process compound_to_reaction {
 }
 
 process gene_to_reaction {
-    publishDir "$params.publishdir/gene_to_reaction", mode: 'copy'
+    //publishDir "$params.publishdir/gene_to_reaction", mode: 'copy'
 
     input:
     file results_folder from _results_ch
@@ -50,7 +50,7 @@ process gene_to_reaction {
 }
 
 process reaction_to_gene {
-    publishDir "$params.publishdir/reaction_to_gene", mode: 'copy'
+    //publishDir "$params.publishdir/reaction_to_gene", mode: 'copy'
 
     input:
     file results_folder from _results_ch2
@@ -66,7 +66,7 @@ process reaction_to_gene {
 }
 
 process scoring {
-    publishDir "$params.publishdir/scoring", mode: 'copy'
+    //publishDir "$params.publishdir/scoring", mode: 'copy'
 
     input:
     file results_folder from _results_ch3
