@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <interface id="speclib_add">
 
+    <download>
+        <source type="folder" name="workflow_results/"/>
+    </download>
+
+    <view id="download_results" label="Download All Results" group="Download">
+        <blockRef id="main" type="download_results"/>
+    </view>
+    <block id="download_results" type="dummydownload">
+        <data>
+            <source type="file" name="workflow_results/stdout.log"/>
+            <parsers>
+                <parser type="stream" contentType="text/xml"/>
+            </parsers>
+        </data>
+    </block>
+
     <!-- Workflow Specific Results -->
     <view id="view_magi_results" label="View MAGI Results">
         <blockRef id="main" type="view_magi_results"/>
