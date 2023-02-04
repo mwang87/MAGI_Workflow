@@ -15,6 +15,8 @@ params.publishdir = "nf_output"
 process compound_to_reaction {
     //publishDir "$params.publishdir/geneToReaction", mode: 'copy'
 
+    conda "$TOOL_FOLDER/magi/magi_2_env.yml"
+
     input:
     file spectrum_results from _spectra_ch
     file sequence_results from _sequence_ch
@@ -36,6 +38,8 @@ process compound_to_reaction {
 process gene_to_reaction {
     //publishDir "$params.publishdir/gene_to_reaction", mode: 'copy'
 
+    conda "$TOOL_FOLDER/magi/magi_2_env.yml"
+
     input:
     file results_folder from _results_ch
 
@@ -51,6 +55,8 @@ process gene_to_reaction {
 
 process reaction_to_gene {
     //publishDir "$params.publishdir/reaction_to_gene", mode: 'copy'
+
+    conda "$TOOL_FOLDER/magi/magi_2_env.yml"
 
     input:
     file results_folder from _results_ch2
@@ -68,6 +74,8 @@ process reaction_to_gene {
 process scoring {
     //publishDir "$params.publishdir/scoring", mode: 'copy'
 
+    conda "$TOOL_FOLDER/magi/magi_2_env.yml"
+
     input:
     file results_folder from _results_ch3
 
@@ -84,6 +92,8 @@ process scoring {
 // Formatting results
 process format_results {
     publishDir "$params.publishdir/results", mode: 'copy'
+
+    conda "$TOOL_FOLDER/magi/magi_2_env.yml"
 
     input:
     file results_folder from _results_ch4
