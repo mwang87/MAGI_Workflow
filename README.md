@@ -35,3 +35,8 @@ graphml file is missing for magi 1, need to install after setup.py from Ben.
 conda create -n magi2 -f magi/magi_2_env.yml
 python ./setup_magi2.py
 ```
+
+Then install blast
+```
+wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.13.0+-x64-linux.tar.gz
+```
