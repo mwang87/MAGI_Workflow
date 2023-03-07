@@ -43,6 +43,7 @@ process gene_to_reaction {
 
     input:
     file results_folder from _results_ch
+    file magi_folder from Channel.fromPath( TOOL_FOLDER + "/magi" )
 
     output:
     file "$results_folder" into _results_ch2
@@ -61,6 +62,7 @@ process reaction_to_gene {
 
     input:
     file results_folder from _results_ch2
+    file magi_folder from Channel.fromPath( TOOL_FOLDER + "/magi" )
 
     output:
     file "$results_folder" into _results_ch3
@@ -79,6 +81,7 @@ process scoring {
 
     input:
     file results_folder from _results_ch3
+    file magi_folder from Channel.fromPath( TOOL_FOLDER + "/magi" )
 
     output:
     file "$results_folder" into _results_ch4
@@ -98,6 +101,7 @@ process format_results {
 
     input:
     file results_folder from _results_ch4
+    file magi_folder from Channel.fromPath( TOOL_FOLDER + "/magi" )
 
     output:
     file "*tsv"

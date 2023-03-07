@@ -1,4 +1,4 @@
-name: massql_workflow
+name: magi2_workflow
 displayname: STUFF
 Views:
 -   name: Query Results
