@@ -20,6 +20,7 @@ process compound_to_reaction {
     input:
     file spectrum_results from _spectra_ch
     file sequence_results from _sequence_ch
+    file magi_folder from Channel.fromPath( TOOL_FOLDER + "/magi" )
 
     output:
     file "compound_to_reaction" into _results_ch
