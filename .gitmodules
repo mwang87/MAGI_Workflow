@@ -4,3 +4,6 @@
 [submodule "CCMSDeployments"]
 	path = proteosafe/CCMSDeployments
 	url = https://github.com/CCMS-UCSD/CCMSDeployments.git
+[submodule "workflow/GNPS2_DeploymentTooling"]
+	path = workflow/GNPS2_DeploymentTooling
+	url = https://github.com/Wang-Bioinformatics-Lab/GNPS2_DeploymentTooling.git

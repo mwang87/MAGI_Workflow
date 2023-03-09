@@ -2,9 +2,6 @@
 
 params.inputspectra = ''
 params.inputsequence = ''
-params.workflowParameters = ''
-
-params.type = ''
 
 _spectra_ch = Channel.fromPath( params.inputspectra )
 _sequence_ch = Channel.fromPath( params.inputsequence )

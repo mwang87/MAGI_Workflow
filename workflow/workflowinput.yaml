@@ -10,12 +10,22 @@ parameterlist:
     - displayname: File Selection
       paramtype: section
 
-    - displayname: Input Data Files
+    - displayname: Input Annotations
       paramtype: fileselector
-      nf_paramname: input_spectra
+      nf_paramname: inputspectra
       formplaceholder: Enter the path to data
       formvalue: ""
-      targettaskfolder: input_spectra
+      targettaskfolder: inputspectra
       optional: false
-      selectsinglefile: false
+      selectsinglefile: true
+      folderunroll: false
+
+    - displayname: Input Sequence
+      paramtype: fileselector
+      nf_paramname: inputsequence
+      formplaceholder: Enter the path to data
+      formvalue: ""
+      targettaskfolder: inputsequence
+      optional: false
+      selectsinglefile: true
       folderunroll: false
