@@ -1,31 +1,25 @@
 name: magi2_workflow
 displayname: STUFF
 Views:
--   name: Query Results
-    displayname: Query Results
-    viewname: pairslist
+-   name: MAGI2 Results
+    displayname: MAGI2 Results
+    viewname: results
     displaytype: datatable_serverbig
     parameters:
-        filename: nf_output/msql/merged_query_results.tsv
+        filename: nf_output/results/magi_results.tsv
         columns:
             -   title: "View"
-                data: 
-            -   title: "filename"
-                data: filename
-            -   title: "original_path"
-                data: original_path
-            -   title: "scan"
-                data: scan
-            -   title: "rt"
-                data: rt
-            -   title: "precmz"
-                data: precmz
-            -   title: "mslevel"
-                data: mslevel
-            -   title: "query_index"
-                data: query_index
+                data: "original_compound"
+            -   title: "similarity"
+                data: similarity
+            -   title: "compound_score"
+                data: compound_score
+            -   title: "reaction_connection"
+                data: reaction_connection
+            -   title: "MAGI_score"
+                data: MAGI_score
         columnDefs: '[ {"targets": 0,"data": null,"render": function ( data, type, row, meta ) {
             return `
-            <a target="_blank" href="/dashboards/lcms?usi=mzspec:GNPS2-${task}-${encodeURIComponent(row["filename"])}">None</a>
+            <img src="https://structure.gnps2.org/structureimg?smiles=${encodeURIComponent(row["original_compound"])}"/>
             `;}}]'
             
