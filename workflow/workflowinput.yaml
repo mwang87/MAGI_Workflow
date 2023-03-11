@@ -1,0 +1,31 @@
+workflowname: magi2_workflow
+workflowdescription: magi2_workflow
+workflowlongdescription: This is a MAGI2 Workflow
+workflowversion: "0.1"
+workflowfile: workflow_magi2.nf
+workflowautohide: false
+adminonly: false
+#This maps the parameters from an input form to those that will appear in nextflow
+parameterlist:
+    - displayname: File Selection
+      paramtype: section
+
+    - displayname: Input Annotations
+      paramtype: fileselector
+      nf_paramname: inputspectra
+      formplaceholder: Enter the path to data
+      formvalue: ""
+      targettaskfolder: inputspectra
+      optional: false
+      selectsinglefile: true
+      folderunroll: false
+
+    - displayname: Input Sequence
+      paramtype: fileselector
+      nf_paramname: inputsequence
+      formplaceholder: Enter the path to data
+      formvalue: ""
+      targettaskfolder: inputsequence
+      optional: false
+      selectsinglefile: true
+      folderunroll: false

@@ -1,0 +1,71 @@
+name: magi2_workflow
+displayname: STUFF
+Views:
+-   name: MAGI2 Results
+    displayname: MAGI2 Results
+    viewname: results
+    displaytype: datatable_serverbig
+    parameters:
+        filename: nf_output/results/magi_results.tsv
+        columns:
+            -   title: "View"
+                data: "original_compound"
+            -   title: "similarity"
+                data: similarity
+            -   title: "compound_score"
+                data: compound_score
+            -   title: "reaction_connection"
+                data: reaction_connection
+            -   title: "MAGI_score"
+                data: MAGI_score
+        columnDefs: '[ {"targets": 0,"data": null,"render": function ( data, type, row, meta ) {
+            return `
+            <img src="https://structure.gnps2.org/structureimg?smiles=${encodeURIComponent(row["original_compound"])}"/>
+            `;}}]'
+            
+
+-   name: MAGI2 Gene Results
+    displayname: MAGI2 Gene  Results
+    viewname: generesults
+    displaytype: datatable_serverbig
+    parameters:
+        filename: nf_output/results/magi_gene_results.tsv
+        columns:
+            -   title: "View"
+                data: "original_compound"
+            -   title: "similarity"
+                data: similarity
+            -   title: "compound_score"
+                data: compound_score
+            -   title: "reaction_connection"
+                data: reaction_connection
+            -   title: "MAGI_score"
+                data: MAGI_score
+        columnDefs: '[ {"targets": 0,"data": null,"render": function ( data, type, row, meta ) {
+            return `
+            <img src="https://structure.gnps2.org/structureimg?smiles=${encodeURIComponent(row["original_compound"])}"/>
+            `;}}]'
+            
+
+-   name: MAGI2 Compound Results
+    displayname: MAGI2 Compound Results
+    viewname: compoundresults
+    displaytype: datatable
+    parameters:
+        filename: nf_output/results/magi_compound_results.tsv
+        columns:
+            -   title: "View"
+                data: "original_compound"
+            -   title: "similarity"
+                data: similarity
+            -   title: "compound_score"
+                data: compound_score
+            -   title: "reaction_connection"
+                data: reaction_connection
+            -   title: "MAGI_score"
+                data: MAGI_score
+        columnDefs: '[ {"targets": 0,"data": null,"render": function ( data, type, row, meta ) {
+            return `
+            <img src="https://structure.gnps2.org/structureimg?smiles=${encodeURIComponent(row["original_compound"])}"/>
+            `;}}]'
+            
